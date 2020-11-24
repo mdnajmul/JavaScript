@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window confirm() Method</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Window confirm() Method")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+               
+            <button onclick="Delete()">Delete</button>
+            <script>
+                
+                /*
+                    The confirm() method displays a dialog box with a specified message, along with an OK and a Cancel button.
+                    A confirm box is often used if you want the user to verify or accept something.
+                    The confirm() method returns true if the user clicked "OK", and false otherwise.
+                */
+                
+                function Delete(){
+                    confirm("Are you sure?");
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

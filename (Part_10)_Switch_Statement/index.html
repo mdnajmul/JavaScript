@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Switch Statement</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2><script>document.write("JavaScript: Switch Statement")</script></h2>
+        </div>
+        
+        <div class="maincontent">
+
+            <input type="text" id="codeText">
+            <button onclick="checkCoding()">Check</button>
+            <div id='show'></div>   
+            <script>
+
+                function checkCoding(){
+                    var txt;
+                    var coding = document.getElementById('codeText').value;
+
+                    switch(coding) {
+                        case "php":
+                            txt = "I love php for coding";
+                            break;
+                        case "java":
+                            txt = "I love java for coding";
+                            break;
+                        case "python":
+                            txt = "I love python for coding";
+                            break;
+                        case "c++":
+                            txt = "I love c++ for coding";
+                            break;
+                        default:
+                            txt = "Unknown text...";
+                    }
+                    document.getElementById('show').innerHTML = txt;
+                }
+                
+
+
+            </script>
+        </div>
+        
+        <div class="footer">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </div>
+    </section>
+</body>
+</html>

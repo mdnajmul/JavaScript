@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client side validation using regular expression</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Client side validation using regular expression")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+             
+             <table>
+                 <tr>
+                     <td>Your Email:</td>
+                     <td><input type="text" id="getValue" onkeyup="validateEmail()"></td>
+                 </tr>
+             </table>
+            <script>
+                
+                function validateEmail(){
+                    var getId = document.getElementById('getValue');
+                    var getEmail = getId.value;
+                    var emailRegExp = /([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})/;
+                    //set font color is black
+                    getId.style.color = "black";
+                    //use if-else condition for check write/wrong email address
+                    if(emailRegExp.test(getEmail)){
+                        getId.style.border = "2px solid green";
+                    } else{
+                        getId.style.border = "2px solid red";
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

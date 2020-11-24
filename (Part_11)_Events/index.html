@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2><script>document.write("JavaScript: Events")</script></h2>
+        </div>
+        
+        <div class="maincontent">
+            <button onclick="checkEvent()">Click Here</button>  
+            <button onmouseover="checkMouseEvent()">Mouseover Here</button>
+            <button ondblclick="checkDoubleClickEvent()">Double Click Here</button>  
+            <button onmouseup="checkMouseupEvent()">Click Then Releases Mouse</button>  
+            <button onmousedown="checkMousedownEvent()">Click & Not Releases Mouse</button>  
+            <button onkeydown="checkKeydownEvent()">Press Any Key(Down)</button>  
+            <button onkeyup="checkKeyupEvent()">Press Any Key(Up)</button>  
+            <button onkeypress="checkpressEvent()">Press Any Key</button>
+            <div>
+                <input type="text" onfocus="checkFocusEvent()">
+            </div>
+            <div>
+                <input type="text" onblur="checkBlurEvent()">
+            </div>   
+            <script>
+
+                //The onclick event occurs when the user clicks on an element.
+                function checkEvent(){
+                    document.write("This is onclick event.");
+                }
+                
+                //The onmouseover event occurs when the mouse pointer is moved onto an element, or onto one of its children.
+                function checkMouseEvent(){
+                    document.write("This is onmouseover event.");
+                }
+                
+                //The ondblclick event occurs when the user double-clicks on an element.
+                function checkDoubleClickEvent(){
+                    document.write("This is ondblclick event.");
+                }
+                
+                //The onmouseup event occurs when a user releases a mouse button over an element.
+                function checkMouseupEvent(){
+                    document.write("This is onmouseup event.");
+                }
+
+                //The onmousedown event occurs when a user presses a mouse button over an element.
+                function checkMousedownEvent(){
+                    document.write("This is onmousedown event.");
+                }
+                
+                //The onkeydown event occurs when the user is pressing a key (on the keyboard).
+                function checkKeydownEvent(){
+                    document.write("This is onkeydown event.");
+                }
+                
+                //The onkeyup event occurs when the user releases a key (on the keyboard).
+                function checkKeyupEvent(){
+                    document.write("This is onkeyup event.");
+                }
+                
+                //The onkeypress event occurs when the user presses a key (on the keyboard).
+                function checkpressEvent(){
+                    document.write("This is onkeypress event.");
+                }
+                
+                
+                function checkFocusEvent(){
+                    alert("This is onfocus event!");
+                }
+                
+                //The onfocus event occurs when an element gets focus.
+                //The onfocus event is most often used with <input>, <select>, and <a>.
+                function checkBlurEvent(){
+                    alert("This is blur event!");
+                }
+
+
+            </script>
+        </div>
+        
+        <div class="footer">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </div>
+    </section>
+</body>
+</html>

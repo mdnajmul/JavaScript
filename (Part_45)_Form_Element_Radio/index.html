@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Element Radio</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Form Element Radio")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+            <form name="myform" onsubmit="getCode()">
+                 <table>
+                     <tr>
+                         <td>Gender:</td>
+                         <td>
+                             <input type="radio" name="rbox" value="Male">Male
+                             <input type="radio" name="rbox" value="Female">Female
+                             <input type="radio" name="rbox" value="Other">Other
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td>
+                             <input type="Submit" value="Submit">
+                             <input type="reset" value="Clear">
+                         </td>
+                     </tr>
+                     
+                 </table>
+            </form>
+            <script>
+                
+                function getCode(){
+                    document.write("Your Gender is: "+selectedCode());
+                }
+                
+                function selectedCode(){
+                    for(i=0; i<=2; i++){
+                        var getChecked = document.myform.rbox[i];
+                        if(getChecked.checked){
+                            return getChecked.value;
+                        }
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

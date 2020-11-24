@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expressions</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Regular Expressions")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+           
+            <button onclick="myreg()">Search</button>
+            <div id="show"></div>
+            
+            <button onclick="myrep()">Replace</button>
+            <div id="rep">My name is Najmul</div>
+            
+            <button onclick="stringTest()">Test Now</button>
+            <div id="test">I completed my graduation from Southeast University</div>    
+            <div id="test1"></div>   
+            <div id="test2"></div>   
+             
+            <script>
+                
+                function myreg(){
+                    var str = "My name is Md. Najmul Hoque Ovi";
+                    //hold position number
+                    var sr = str.search(/Najmul/i);
+                    document.getElementById('show').innerHTML = sr;
+                }
+                
+                //Replace text
+                function myrep(){
+                    var str1 = document.getElementById('rep').innerHTML;
+                    var str2 = str1.replace("Najmul","Ovi");
+                    document.getElementById('rep').innerHTML = str2;
+                }
+                
+                //use test() for search string or word. If found then return true & if not found then return false
+                function stringTest(){
+                    var txt = document.getElementById('test').innerHTML;
+                    document.getElementById('test1').innerHTML = /m/.test(txt);
+                    //by using exec() method ,If search character/string is found then that character/string is returned
+                    document.getElementById('test2').innerHTML = /m/.exec(txt);
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

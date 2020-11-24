@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window prompt() Method</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Window prompt() Method")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+               
+            <button onclick="Name()">Type Name</button>
+            <div id="show"></div>
+            <script>
+                
+                /*
+                    The prompt() method displays a dialog box that prompts the visitor for input.
+                    A prompt box is often used if you want the user to input a value before entering a page.
+                    The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.
+                */
+                
+                function Name(){
+                    var name = prompt("Please enter your name","your name");
+                    if(name != null){
+                        document.getElementById('show').innerHTML = "Hi ! "+name+", How are you?";
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

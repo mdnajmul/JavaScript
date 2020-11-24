@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Countdown</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Make a Countdown")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <div>
+                <input type="button" value="Start Countdown" onclick="countdownInit()">
+                <input type="button" value="Stop Countdown" onclick="countdownClear()">
+            </div>
+            <div id="show"></div>
+            
+            <script>
+                
+                var countdown;
+                var countdownNumber;
+                
+                //initial countdown number
+                function countdownInit(){
+                    countdownNumber = 100;
+                    countdownTigger();
+                }
+                
+                //show countdown number & it decreases every 1 second
+                function countdownTigger(){
+                    if(countdownNumber > 0 ){
+                        document.getElementById('show').innerHTML = countdownNumber;
+                        countdownNumber--;
+                        if(countdownNumber > 0){
+                            countdown = setTimeout("countdownTigger()",1000);
+                        }
+                    }
+                }
+                
+                //stop countdown
+                function countdownClear(){
+                    clearTimeout(countdown);
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

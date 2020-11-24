@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number()</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Number()")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+               
+            <div id="show"></div>
+            <script>
+                
+                /*
+                    The Number() function converts the object argument to a number that represents the object's value.
+                    
+                    If the value cannot be converted to a legal number, NaN is returned.
+                    
+                    Note: If the parameter is a Date object, the Number() function returns the number of milliseconds since midnight January 1, 1970 UTC.
+                    
+                    Syntax: Number(object)
+                */
+                
+                var str = true;
+                var str2 = false;
+                var str3 = new Date();
+                var str4 = "555";
+                var str5 = "555 777";
+                var str6 = "najmul";
+                
+                var n = Number(str)+"<br/>"+Number(str2)+"<br/>"+Number(str3)+"<br/>"+Number(str4)+"<br/>"+Number(str5)+"<br/>"+Number(str6);
+                
+                document.getElementById('show').innerHTML = n;
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

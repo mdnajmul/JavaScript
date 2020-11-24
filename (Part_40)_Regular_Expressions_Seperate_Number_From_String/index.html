@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expressions (Seperate Number From String)</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Regular Expressions(Seperate Number From String)")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+           
+            <table>
+                <tr>
+                    <td>Your Input:</td>
+                    <td><input type="text" id="getValue"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="button" value="Check" onclick="getNumber()"></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td><textarea id="showValue"></textarea></td>
+                </tr>
+            </table>   
+             
+            <script>
+                
+                function getNumber(){
+                    //Initially, text area value set null
+                    document.getElementById('showValue').value = "";
+                    var getString = document.getElementById('getValue').value;
+                    var result = getString.match(/\d+/g);
+                    //document.getElementById('showValue').value = result;
+                    
+                    //show result line by line
+                    for(var i = 0; i < result.length; i++){
+                        document.getElementById('showValue').value += result[i]+"\n";
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

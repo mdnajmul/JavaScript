@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parseInt()</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: parseInt()")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+               
+            
+            <script>
+                
+                /*
+                    The parseInt() function parses a string and returns an integer.
+                    
+                    The radix parameter is used to specify which numeral system to be used, for example, a radix of 16 (hexadecimal) indicates that the number in the string should be parsed from a hexadecimal number to a decimal number.
+                    
+                    Note: Only the first number in the string is returned!
+                    
+                    Note: If the first character cannot be converted to a number, parseInt() returns NaN.
+                    
+                    Syntax: parseInt(string, radix)
+                */
+                
+                var str = "100najmul"
+                var str2 = "25";
+                var str3 = "najmul25";
+                var str4 = "najmul"
+                
+                document.write(parseInt(str)+"<br/>");
+                document.write(parseInt(str2)+"<br/>");
+                document.write(parseInt(str3)+"<br/>");
+                document.write(parseInt(str4)+"<br/>");
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

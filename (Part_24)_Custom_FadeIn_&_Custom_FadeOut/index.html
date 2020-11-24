@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom FadeIn & Custom FadeOut</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Custom FadeIn & Custom FadeOut")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            
+            <div>
+               <button onclick="fadeOut()">Start</button>
+               <br/>
+               <img src="flower.jpg" alt="Flower.jpg" id="myimg"> 
+            </div>
+            
+            <script>
+                
+                /*
+                    The fadeIn() method gradually changes the opacity, for selected elements, from hidden to visible (fading effect).
+                    Note: Hidden elements will not be displayed at all (no longer affects the layout of the page).
+                    Tip: This method is often used together with the fadeOut() method.
+                */
+                
+                //hold image in JavaScript from HTML
+                var image = document.getElementById('myimg');
+                var duration = 2000;  //Fade duration
+                var showTime = 2000; //visible time duration
+                var hiddenTime = 2000; //hidden time duration
+                
+                //This function set image opacity value
+                function setOpacity(value){
+                    image.style.opacity = value;
+                }
+                
+                //This function is used for hidden image slowly. After complete full hidden then call 'fadeIn()' function for start image start visible slowly 
+                function fadeOut(){
+                    for(i=0; i<=1; i+=0.01){
+                        setTimeout("setOpacity("+(1-i)+")", (i*duration));
+                    }
+                    setTimeout("fadeIn()", (duration+hiddenTime));
+                }
+                
+                //This function is used for visible image slowly & after complete visible then call 'fadeOut()' function for image start hidden slowly
+                function fadeIn(){
+                    for(i=0; i<=1; i+=0.01){
+                        setTimeout("setOpacity("+i+")", (i*duration));
+                    }
+                    setTimeout("fadeOut()", (duration+showTime));
+                }
+                
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

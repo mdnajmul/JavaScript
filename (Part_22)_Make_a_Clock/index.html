@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Clock</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Make a Clock")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <div id="show"></div>
+            <div>
+                <input type="button" value="Stop Time" onclick="stopTimer()">
+            </div>
+            
+            <script>
+                
+                /*
+                    The clearInterval() method clears a timer set with the setInterval() method.
+                    The ID value returned by setInterval() is used as the parameter for the clearInterval() method.
+                    Note: To be able to use the clearInterval() method, we must use a variable when creating the interval method:
+                    
+                    Example:
+                    myVar = setInterval("javascript function", milliseconds);
+                    Then we will be able to stop the execution by calling the clearInterval() method.
+                    clearInterval(myVar);
+                */
+                
+                //** Now Make a Clock **//
+                
+                    //Display the current time (the setInterval() method will execute the "startTimer()" function once every 1 second).
+                    //Use clearInterval() to stop the time:
+                    myVar = setInterval("startTimer()", 1000);
+                    
+                    function startTimer(){
+                        var d = new Date();
+                        var t = d.toLocaleTimeString();
+                        document.getElementById('show').innerHTML = t;
+                    }
+                    //stop clock
+                    function stopTimer(){
+                        clearInterval(myVar);
+                    }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

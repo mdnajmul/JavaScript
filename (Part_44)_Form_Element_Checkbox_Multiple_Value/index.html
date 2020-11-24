@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Element Checkbox Multiple Value</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Form Element Checkbox Multiple Value")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+            <form name="myform" onsubmit="getCode()">
+                 <table>
+                     <tr>
+                         <td>Select:</td>
+                         <td>
+                             <input type="checkbox" name="chbox" value="HTML">HTML<br/>
+                             <input type="checkbox" name="chbox" value="PHP">PHP<br/>
+                             <input type="checkbox" name="chbox" value="JAVA">JAVA<br/>
+                             <input type="checkbox" name="chbox" value="CSS">CSS
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td>
+                             <input type="Submit" value="Submit">
+                             <input type="reset" value="Clear">
+                         </td>
+                     </tr>
+                     
+                 </table>
+            </form>
+            <script>
+                
+                function getCode(){
+                    document.write("You Selected: "+selectedCode());
+                }
+                
+                function selectedCode(){
+                    var cd = "<ul>";
+                    for(i=0;i<=3;i++){
+                        var myvalue = document.myform.chbox[i];
+                        if(myvalue.checked){
+                            cd +="<li>"+myvalue.value;
+                        }
+                    }
+                    cd +="</ul>";
+                    return cd;
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

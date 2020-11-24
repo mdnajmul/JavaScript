@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexOf()</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: indexOf()")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                /*
+                    The indexOf() method returns the position of the first occurrence of a specified value in a string.
+                    This method returns -1 if the value to search for never occurs.
+                    Note: The indexOf() method is case sensitive. 
+                */
+                
+                //Example
+                var str = "I completed my graduation from Southeast University. Southeast University is one of famous University in Bangladesh";
+                var result = str.indexOf('University');
+                document.write(result+"<br/>");
+                
+                
+                //Another Example
+                var color = ['red', 'green', 'blue', 'yellow', 'white'];
+                var result = color.indexOf('yellow');
+                if(result == -1){
+                    document.write("This color is not present!");
+                } else{
+                    document.write("This color is present!");
+                }
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

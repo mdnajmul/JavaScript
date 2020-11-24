@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating a Countdown Timer</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Creating a Countdown Timer")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <div id="show" style="text-align: center; font-size: 25px; font-weight: bold; color: red;"></div>
+            
+            <script>
+                
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jun 30, 2021 11:00:00").getTime();
+                
+                // Update the count down every 1 second
+                var count = setInterval("countDown()", 1000);
+                
+                function countDown(){
+                    // Get today's date and time
+                    var today = new Date().getTime();
+                    
+                    // Find the differnce between today and the count down date
+                    var difference = countDownDate - today;
+                    
+                    // Time calculations for days, hours, minutes and seconds
+                    var day = Math.floor(difference / (1000*60*60*24));
+                    var hour = Math.floor((difference % (1000*60*60*24)) / (1000*60*60));
+                    var minute = Math.floor((difference % (1000*60*60)) / (1000*60));
+                    var second = Math.floor((difference % (1000*60)) / 1000);
+                    
+                    // Output the result in an element with id="show"
+                    document.getElementById('show').innerHTML = day+"d "+hour+"h "+minute+"m "+second+"s ";
+                    
+                    // If the count down is over, write some text 
+                   if (difference < 0) {
+                        clearInterval(count);
+                        document.getElementById("show").innerHTML = "EXPIRED";
+                   }
+                    
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

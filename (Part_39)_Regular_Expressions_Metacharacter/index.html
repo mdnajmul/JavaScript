@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expressions Metacharacter</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Regular Expressions Metacharacter")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+           
+             <button onclick="myConstructor()">Try Constructor</button>
+             <button onclick="gModifier()">Try g</button>
+             <button onclick="mModifier()">Try m</button>
+             <button onclick="nPlusModifier()">Try n+</button>
+             <button onclick="nMultModifier()">Try n*</button>
+             <button onclick="nQuesModifier()">Try n?</button>
+             <button onclick="nXModifier()">Try n{X}</button>
+             <button onclick="nXYModifier()">Try n{X,Y}</button>
+             <button onclick="nX_Modifier()">Try n{X,}</button>
+             <button onclick="n_$_Modifier()">Try n$</button>
+             <button onclick="n_Modifier()">Try ^n</button>
+             <button onclick="n_ABC_Modifier()">Try [abc]</button>
+             <button onclick="n_Not_ABC_Modifier()">Try [^abc]</button>
+             <button onclick="n_0_9_Modifier()">Try [0-9]</button>
+             <button onclick="n_Not_0_9_Modifier()">Try [^0-9]</button>
+             <button onclick="X_or_Y_Modifier()">Try (X|Y)</button>
+             <button onclick="w_Modifier()">Try \w</button>
+             <button onclick="W_Modifier()">Try \W</button>
+             <button onclick="d_Modifier()">Try \d</button>
+             <button onclick="D_Modifier()">Try \D</button>
+             <button onclick="s_Modifier()">Try \s</button>
+             <button onclick="S_Modifier()">Try \S</button>
+             <button onclick="b_Modifier()">Try \b</button>
+             <button onclick="B_Modifier()">Try \B</button>
+             <div id="show"></div>
+             
+             
+            <script>
+                
+                //**constructor**//
+                    /*
+                        In JavaScript, the constructor property returns the constructor function for an object.
+
+                        The return value is a reference to the function, not the name of the function:
+
+                        For JavaScript regular expressions the constructor property returns function RegExp() { [native code] }
+
+                        For JavaScript numbers the constructor property returns function Number() { [native code] }
+
+                        For JavaScript strings the constructor property returns function String() { [native code] }
+                    */
+                    //Example:
+                    function myConstructor(){
+                        var patt = new RegExp("Najmul Ovi", "g");
+                        var res = patt.constructor;
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                //**RegExp g Modifier**//
+                    /*
+                        The g modifier is used to perform a global match (find all matches rather than stopping after the first match).
+                        Tip: To perform a global, case-insensitive search, use this modifier together with the "i" modifier.
+                        Tip: Use the global property to specify whether or not the g modifier is set.
+                        
+                        Syntax: new RegExp("regexp", "g")
+
+                                or simply:
+
+                                /regexp/g
+                    */
+                    //Example:
+                    function gModifier(){
+                        var str = "Is this all there is?";
+                        //var patt = new RegExp(str, "/is/gi");
+                        var patt = /is/gi;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                //**RegExp m Modifier**//
+                    /*
+                        The m modifier is used to perform a multiline match.
+                        
+                        The m modifier treat beginning (^) and end ($) characters to match the beginning or end of each line of a string (delimited by \n or \r), rather than just the beginning or end of the string.
+                        
+                        Note: The m modifier is case-sensitive and will stop the search after the first match. To perform a global, case-insensitive, multiline search, use this modifier together with "g" and "i".
+                        
+                        Syntax: new RegExp("regexp", "m")
+
+                                or simply:
+
+                                /regexp/m
+                    */
+                    //Example:
+                    function mModifier(){
+                        var str = "\nIs th\nis it?";
+                        var patt = /^is/m;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp + Quantifier (n+ Modifier)**//
+                    /*
+                        The n+ quantifier matches any string that contains at least one n.
+                        
+                        Syntax: new RegExp("n+")
+
+                                or simply:
+
+                                /n+/
+                    */
+                    //Example:
+                    function nPlusModifier(){
+                        var str = "Hellooo World! Hello Schools!"; 
+                        var patt = /o+/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp * Quantifier (n* Modifier)**//
+                    /*
+                        The n* quantifier matches any string that contains zero or more occurrences of n.
+                        
+                        Syntax: new RegExp("n*")
+
+                                or simply:
+
+                                / n* /
+                    */
+                    //Example:
+                    function nMultModifier(){
+                        var str = "Hellooo World! Hello Schools!"; 
+                        var patt = /lo*/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+               
+                //**RegExp ? Quantifier (n? Modifier)**//
+                    /*
+                        The n? quantifier matches any string that contains zero or one occurrences of n.
+                        
+                        Syntax: new RegExp("n?")
+
+                                or simply:
+
+                                /n?/
+                    */
+                    //Example:
+                    function nQuesModifier(){
+                        var str = "1, 100 or 1000?"; 
+                        var patt = /10?/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp {X} Quantifier (n{X} Modifier)**//
+                    /*
+                        The n{X} quantifier matches any string that contains a sequence of X n's.
+                        
+                        X must be a number.
+                        
+                        Syntax: new RegExp("n{X}")
+
+                                or simply:
+
+                                /n{X}/
+                                
+                        Syntax with modifiers: new RegExp("n{X}", "g")
+
+                                               or simply:
+                                               
+                                               /\n{X}/g
+                    */
+                    //Example: Do a global search for a substring that contains a sequence of four digits
+                    function nXModifier(){
+                        var str = "100, 1000 or 10000?"; 
+                        var patt = /\d{4}/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp {X,Y} Quantifier (n{X,Y} Modifier)**//
+                    /*
+                        The n{X,Y} quantifier matches any string that contains a sequence of X to Y n's.
+                        
+                        X and Y must be a number.
+                        
+                        Syntax: new RegExp("n{X,Y}")
+
+                                or simply:
+
+                                /n{X,Y}/
+                                
+                        Syntax with modifiers: new RegExp("n{X,Y}", "g")
+
+                                               or simply:
+                                               
+                                               /\n{X,Y}/g
+                    */
+                    //Example: Do a global search for a substring that contains a sequence of three to four digits
+                    function nXYModifier(){
+                        var str = "100, 1000 or 10000?"; 
+                        var patt = /\d{3,4}/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp {X,} Quantifier (n{X,} Modifier)**//
+                    /*
+                        The n{X,} quantifier matches any string that contains a sequence of at least X n's.
+                        
+                        X and Y must be a number.
+                        
+                        Syntax: new RegExp("n{X,}")
+
+                                or simply:
+
+                                /n{X,}/
+                                
+                        Syntax with modifiers: new RegExp("n{X,}", "g")
+
+                                               or simply:
+                                               
+                                               /\n{X,}/g
+                    */
+                    //Example: Do a global search for a substring that contains a sequence of at least three digits
+                    function nX_Modifier(){
+                        var str = "100, 1000 or 10000?"; 
+                        var patt = /\d{3,}/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp $ Quantifier (n$ Modifier)**//
+                    /*
+                        The n$ quantifier matches any string with n at the end of it.
+                        
+                        Tip: Use the ^n quantifier to match any string with n at the BEGINNING of it.
+                        
+                        Syntax: new RegExp("n$")
+
+                                or simply:
+
+                                /n$/
+                                
+                        Syntax with modifiers: new RegExp("n$", "g")
+
+                                               or simply:
+                                               
+                                               /\n$/g
+                    */
+                    //Example: Do a global search for "is" at the end of a string
+                    function n_$_Modifier(){
+                        var str = "Is this his"; 
+                        var patt = /is$/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp ^ Quantifier (^n Modifier)**//
+                    /*
+                        The ^n quantifier matches any string with n at the beginning of it.
+                        
+                        Tip: Use the n$ quantifier to match any string with n at the END of it.
+                        
+                        Syntax: new RegExp("^n")
+
+                                or simply:
+
+                                /^n/
+                                
+                        Syntax with modifiers: new RegExp("^n", "g")
+
+                                               or simply:
+                                               
+                                               /\^n/g
+                    */
+                    //Example: Do a global search for "Is" at the beginning of a string
+                    function n_Modifier(){
+                        var str = "Is this his"; 
+                        var patt = /^Is/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                //**RegExp [abc] Quantifier ([abc] Modifier)**//
+                    /*
+                        The [abc] expression is used to find any character between the brackets.
+                        
+                        The characters inside the brackets can be any characters or span of characters:
+                           -> [abcde..] - Any character between the brackets
+                           -> [A-Z] - Any character from uppercase A to uppercase Z
+                           -> [a-z] - Any character from lowercase a to lowercase z
+                           -> [A-z ]- Any character from uppercase A to lowercase z
+                           
+                        Tip: Use the [^abc] expression to find any character NOT between the brackets.
+                        
+                        Syntax: new RegExp("[abc]")
+
+                                or simply:
+
+                                /[abc]/
+                                
+                        Syntax with modifiers: new RegExp("[abc]", "g")
+
+                                               or simply:
+                                               
+                                               /[abc]/g
+                    */
+                    //Example: Do a global search for the character "h" in a string
+                    function n_ABC_Modifier(){
+                        var str = "Is this his"; 
+                        var patt = /[h]/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp [^abc] Quantifier ([^abc] Modifier)**//
+                    /*
+                        The [^abc] expression is used to find any character NOT between the brackets.
+                        
+                        The characters inside the brackets can be any characters or span of characters:
+                           -> [abcde..] - Any character between the brackets
+                           -> [A-Z] - Any character from uppercase A to uppercase Z
+                           -> [a-z] - Any character from lowercase a to lowercase z
+                           -> [A-z ]- Any character from uppercase A to lowercase z
+                           
+                        Tip: Use the [abc] expression to find any character between the brackets.
+                        
+                        Syntax: new RegExp("[^abc]")
+
+                                or simply:
+
+                                /[^abc]/
+                                
+                        Syntax with modifiers: new RegExp("[^abc]", "g")
+
+                                               or simply:
+                                               
+                                               /[^abc]/g
+                    */
+                    //Example: Do a global search for characters that are NOT inside the brackets [h]
+                    function n_Not_ABC_Modifier(){
+                        var str = "Is this his"; 
+                        var patt = /[^h]/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp [0-9] Quantifier ([0-9] Modifier)**//
+                    /*
+                        The [0-9] expression is used to find any character between the brackets.
+                        
+                        The digits inside the brackets can be any numbers or span of numbers from 0 to 9.
+                           
+                        Tip: Use the [^0-9] expression to find any character that is NOT a digit.
+                        
+                        Syntax: new RegExp("[0-9]")
+
+                                or simply:
+
+                                /[0-9]/
+                                
+                        Syntax with modifiers: new RegExp("[0-9]", "g")
+
+                                               or simply:
+                                               
+                                               /[0-9]/g
+                    */
+                    //Example: Do a global search for the numbers 1, 2, 3 and 4 in a string
+                    function n_0_9_Modifier(){
+                        var str = "123456789"; 
+                        var patt = /[1-4]/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp [^0-9] Quantifier ([^0-9] Modifier)**//
+                    /*
+                        The [^0-9] expression is used to find any character that is NOT a digit.
+                        
+                        The digits inside the brackets can be any numbers or span of numbers from 0 to 9.
+                           
+                        Tip: Use the [0-9] expression to find any character between the brackets that is a digit.
+                        
+                        Syntax: new RegExp("[^0-9]")
+
+                                or simply:
+
+                                /[^0-9]/
+                                
+                        Syntax with modifiers: new RegExp("[^0-9]", "g")
+
+                                               or simply:
+                                               
+                                               /[^0-9]/g
+                    */
+                    //Example: Do a global search for the numbers that are NOT 1 to 4 in a string
+                    function n_Not_0_9_Modifier(){
+                        var str = "123456789"; 
+                        var patt = /[^1-4]/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp (x|y) Quantifier ((x|y) Modifier)**//
+                    /*
+                        The (x|y) expression is used to find any of the alternatives specified.
+                        
+                        The alternatives can be of any characters.
+                        
+                        Syntax: new RegExp("(x|y)")
+
+                                or simply:
+
+                                /(x|y)/
+                                
+                        Syntax with modifiers: new RegExp("(x|y)", "g")
+
+                                               or simply:
+                                               
+                                               /(x|y)/g
+                    */
+                    //Example: Do a global search to find any of the specified alternatives (red|green)
+                    function X_or_Y_Modifier(){
+                        var str = "re, green, red, green, gren, gr, blue, yellow"; 
+                        var patt = /(red|green)/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \w Metacharacter**//
+                    /*
+                        The \w metacharacter is used to find a word character.
+                        
+                        A word character is a character from a-z, A-Z, 0-9, including the _ (underscore) character.
+                        
+                        Syntax: new RegExp("\\w")
+
+                                or simply:
+
+                                /\w/
+                                
+                        Syntax with modifiers: new RegExp("\\w", "g")
+
+                                               or simply:
+                                               
+                                               /\w/g
+                    */
+                    //Example: Do a global search for word characters in a string
+                    function w_Modifier(){
+                        var str = "Give me Your_100%!"; 
+                        var patt = /\w/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \W Metacharacter**//
+                    /*
+                        The \W metacharacter is used to find a non-word character.
+                        
+                        A word character is a character from a-z, A-Z, 0-9, including the _ (underscore) character.
+                        
+                        Syntax: new RegExp("\\W")
+
+                                or simply:
+
+                                /\W/
+                                
+                        Syntax with modifiers: new RegExp("\\W", "g")
+
+                                               or simply:
+                                               
+                                               /\W/g
+                    */
+                    //Example: Do a global search for non-word characters in a string
+                    function W_Modifier(){
+                        var str = "Give me Your_100%!"; 
+                        var patt = /\W/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \d Metacharacter**//
+                    /*
+                        The \d metacharacter is used to find a digit from 0-9.
+                        
+                        Syntax: new RegExp("\\d")
+
+                                or simply:
+
+                                /\d/
+                                
+                        Syntax with modifiers: new RegExp("\\d", "g")
+
+                                               or simply:
+                                               
+                                               /\d/g
+                    */
+                    //Example: Do a global search for digits
+                    function d_Modifier(){
+                        var str = "Give me Your_100%!"; 
+                        var patt = /\d/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                
+                //**RegExp \D Metacharacter**//
+                    /*
+                        The \D metacharacter is used to find a non-digit character.
+                        
+                        Syntax: new RegExp("\\D")
+
+                                or simply:
+
+                                /\D/
+                                
+                        Syntax with modifiers: new RegExp("\\D", "g")
+
+                                               or simply:
+                                               
+                                               /\D/g
+                    */
+                    //Example: Do a global search for non-digit characters
+                    function D_Modifier(){
+                        var str = "Give me Your_100%!"; 
+                        var patt = /\D/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \s Metacharacter**//
+                    /*
+                        The \s metacharacter is used to find a whitespace character.
+                        
+                        A whitespace character can be:
+                           -> A space character
+                           -> A tab character
+                           -> A carriage return character
+                           -> A new line character
+                           -> A vertical tab character
+                           -> A form feed character
+                        
+                        Syntax: new RegExp("\\s")
+
+                                or simply:
+
+                                /\s/
+                                
+                        Syntax with modifiers: new RegExp("\\s", "g")
+
+                                               or simply:
+                                               
+                                               /\s/g
+                    */
+                    //Example: Do a global search for whitespace characters in a string
+                    function s_Modifier(){
+                        var str = "Is this all there is?"; 
+                        var patt = /\s/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \S Metacharacter**//
+                    /*
+                        The \S metacharacter is used to find a non-whitespace character.
+                        
+                        A whitespace character can be:
+                           -> A space character
+                           -> A tab character
+                           -> A carriage return character
+                           -> A new line character
+                           -> A vertical tab character
+                           -> A form feed character
+                        
+                        Syntax: new RegExp("\\S")
+
+                                or simply:
+
+                                /\S/
+                                
+                        Syntax with modifiers: new RegExp("\\S", "g")
+
+                                               or simply:
+                                               
+                                               /\S/g
+                    */
+                    //Example: Do a global search for non-whitespace characters in a string
+                    function S_Modifier(){
+                        var str = "Is this all there is?"; 
+                        var patt = /\S/g;
+                        var res = str.match(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \b Metacharacter**//
+                    /*
+                        The \b metacharacter is used to find a match at the beginning or end of a word.
+                        
+                        Search for the pattern at the beginning of a word like this: \bLO
+                        
+                        Search for the pattern at the end of a word like this: LO\b
+                        
+                        If no match is found, it returns null.
+                        
+                        Syntax: new RegExp("\\bregexp")
+
+                                or simply:
+
+                                /\bregexp/
+                                
+                        Syntax with modifiers: new RegExp("\\bregexp", "g")
+
+                                               or simply:
+                                               
+                                               /\bregexp/g
+                    */
+                    //Example: Do a search for "LO" at the beginning of a word in a string
+                    function b_Modifier(){
+                        var str = "HELLO, LOOK AT YOU"; 
+                        var patt = /\bLO/g;
+                        var res = str.search(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+                
+                
+                //**RegExp \B Metacharacter**//
+                    /*
+                        The \B metacharacter is used to find a match, but where it is NOT at the beginning/end of a word.
+                        
+                        Search for the pattern NOT at the beginning of a word like this: \BLO
+                        
+                        Search for the pattern NOT at the end of a word like this: LO\B
+                        
+                        If no match is found, it returns null.
+                        
+                        Syntax: new RegExp("\\Bregexp")
+
+                                or simply:
+
+                                /\Bregexp/
+                                
+                        Syntax with modifiers: new RegExp("\\Bregexp", "g")
+
+                                               or simply:
+                                               
+                                               /\Bregexp/g
+                    */
+                    //Example: Find the first occurrence of "LO" where it is NOT at the END of a word:
+                    function B_Modifier(){
+                        var str = "HELLO, LDOOKLO AT LOVE YOU"; 
+                        var patt = /LO\B/g;
+                        var res = str.search(patt);
+                        document.getElementById('show').innerHTML = res;
+                    }
+                
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

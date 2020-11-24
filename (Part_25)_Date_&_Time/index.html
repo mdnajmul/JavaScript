@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date & Time</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Date & Time")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <div>
+                <button onclick="showFullDate()">Show Full Date</button>
+                <button onclick="showYear()">Show Current Year</button>
+                <button onclick="showMonth()">Show Current Month</button>
+                <button onclick="showDay()">Show Current Day</button>
+                <button onclick="showHour()">Show Current Hour</button>
+                <button onclick="showMinute()">Show Current Minute</button>
+                <button onclick="showSecond()">Show Current Secound</button>
+            </div>
+            <div id="show"></div>
+            <script>
+                
+                var date = new Date();
+                
+                //Show Full date
+                function showFullDate(){
+                    document.getElementById("show").innerHTML = date;
+                }
+                
+                //Show Current year
+                function showYear(){
+                    document.getElementById("show").innerHTML = date.getFullYear();
+                }
+                
+                //Show Current Month
+                function showMonth(){
+                    document.getElementById("show").innerHTML = date.getMonth()+1;
+                }
+                
+                //Show Current Day
+                function showDay(){
+                    document.getElementById("show").innerHTML = date.getDate();
+                }
+                
+                //Show Current Hour
+                function showHour(){
+                    document.getElementById("show").innerHTML = date.getHours();
+                }
+                
+                //Show Current Minute
+                function showMinute(){
+                    document.getElementById("show").innerHTML = date.getMinutes();
+                }
+                
+                //Show Current Secound
+                function showSecond(){
+                    document.getElementById("show").innerHTML = date.getSeconds();
+                }
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

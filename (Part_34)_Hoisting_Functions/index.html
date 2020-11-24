@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoisting Functions</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Hoisting Functions")</script></h2>
+        </header>
+        
+        <div id="show"></div>
+        <div id="show2"></div>
+        <section class="maincontent">
+               
+            
+            <script>
+                
+                /*
+                    Hoisting is JavaScript's default behavior of moving declarations to the top
+                    
+                    Here, Full function go to top 
+                */
+                
+                //We know that after return statement if we write somethings,that is not executed
+                //If we write any function after return statement, that function go to top & also execute. This is called Hoisting Functions
+                
+                //Example
+                function myFunction(){
+                    
+                    name();
+                    return false;
+                    function name(){
+                        document.write("Md. Najmul Ovi");   //This function go to before 'name();' & execute 
+                    }
+                }
+                myFunction();
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

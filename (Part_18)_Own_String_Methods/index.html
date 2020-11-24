@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Own String Methods</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Own String Methods")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                
+                //**create own string method**//
+                
+                //create a method which return string to reverse form
+                String.prototype.reverseString = function(){
+                    var s = "";
+                    //put length of x variable
+                    var i = this.length;
+                    while(i>0){
+                        s +=this.substring(i-1,i); //here, when i=5 then substring(5-1,5) means put E inside s variable
+                        i--;
+                    }
+                    return s;
+                }
+                var x = "A B C D E";
+                document.write(x.reverseString());
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

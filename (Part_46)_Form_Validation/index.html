@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Form Validation")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+            <form name="myform" method="post" onsubmit="return formValidate();">
+                 <table>
+                    
+                     <tr>
+                         <td>Name</td>
+                         <td><input type="text" name="name"></td>
+                     </tr>
+                     <tr>
+                         <td>Email</td>
+                         <td><input type="text" name="email"></td>
+                     </tr>
+                     <tr>
+                         <td>Phone</td>
+                         <td>
+                             <input type="text" name="phone"><br/>
+                             <input type="checkbox" name="noPhone" onclick="enableDisable(this)"> Please do not call me
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>What can we help you with?</td>
+                         <td>
+                             <select name="subject" value="">
+                                 <option>Select One</option>
+                                 <option>Customer Service</option>
+                                 <option>Question</option>
+                                 <option>Comment</option>
+                                 <option>Others</option>
+                             </select>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>Comment</td>
+                         <td><textarea name="comment"></textarea></td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td>
+                             <input type="submit" name="submit" value="Submit">
+                             <input type="reset" name="reset" value="Clear">
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td>
+                             <div id="msg"></div>
+                         </td>
+                     </tr>
+                     
+                 </table>
+            </form>
+            <script>
+                
+                function formValidate(){
+                    var name = document.myform.name;
+                    var email = document.myform.email;
+                    var phone = document.myform.phone;
+                    var noPhone = document.myform.noPhone;
+                    var subject = document.myform.subject;
+                    var comment = document.myform.comment;
+                    
+                    
+                    if(name.value == ""){
+                        document.getElementById('msg').innerHTML = "Please Enter Your Name !";
+                        return false;
+                    }
+                    
+                    if(email.value == ""){
+                        document.getElementById('msg').innerHTML = "Please Enter Your Email !";
+                        return false;
+                    }
+                    
+                    if(email.value.indexOf("@", 0) < 1){
+                        document.getElementById('msg').innerHTML = "Please Enter Valid Email Address (Missing '@')!";
+                        return false;
+                    }
+                    
+                    if(email.value.indexOf(".", 0) < 1){
+                        document.getElementById('msg').innerHTML = "Please Enter Valid Email Address (Missing '.')!";
+                        return false;
+                    }
+                    
+                    if(phone.value == "" && noPhone.checked == false){
+                        document.getElementById('msg').innerHTML = "Please Enter Your Phone Number !";
+                        return false;
+                    }
+                    
+                    if(subject.selectedIndex < 1){
+                        document.getElementById('msg').innerHTML = "Please tell us how we can help you !";
+                        return false;
+                    }
+                    
+                    if(comment.value == ""){
+                        document.getElementById('msg').innerHTML = "Please write your comment !";
+                        return false;
+                    }
+                }
+                
+                function enableDisable(chbox){
+                    if(chbox.checked == true){
+                        document.myform.phone.disabled = true;
+                    } else{
+                        document.myform.phone.disabled = false;
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

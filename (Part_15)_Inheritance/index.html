@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Inheritance")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                
+                function totalNum(a, b){
+                    this.x = a;
+                    this.y = b;
+                    this.sum = function(){
+                        return this.x+this.y;
+                    }
+                }
+                
+                function totalProduct(a, b){
+                    this.x = a;
+                    this.y = b;
+                    this.product = function(){
+                        return this.x * this.y;
+                    }
+                }
+                
+                //inherit totalNum() function with totalProduct() function by using prototype
+                totalNum.prototype = new totalProduct();
+                
+                //create a object of totalNum() function
+                var tn = new totalNum(10,5);
+                
+                //now we can access all propert & methods of totalProduct() function by using tn object
+                document.write(tn.product());
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

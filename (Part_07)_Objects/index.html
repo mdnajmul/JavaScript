@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Objects</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2><script>document.write("JavaScript: Objects")</script></h2>
+        </div>
+        
+        <div class="maincontent">
+            <div id="show"></div>
+            <script>
+
+                //** Create an object **//
+                var person = {
+                    firstName: "Najmul",
+                    lastName: "Ovi",
+                    age: "24",
+                    func: function(){
+                        return this.firstName+" "+this.lastName;
+                    }
+                    
+                }
+                //Access Object property & method
+                document.write(person.firstName+"<br/>");
+                document.write(person.lastName+"<br/>");
+                document.write(person.age+"<br/>");
+                document.write("Full Name: "+person.func());
+                
+            </script>
+        </div>
+        
+        <div class="footer">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Text from Container</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Get Text from Container")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            <div id="name">Md. Najmul Ovi</div>
+            <hr/>
+            <script>
+
+                var div1 = document.getElementById("name").innerText;
+                var div2 = document.querySelector("div").innerText;
+                var div3 = document.querySelectorAll("div")[0].innerText;
+                var div4 = document.getElementsByTagName("div")[0].innerText;
+                
+                document.write(div1+"<br/>"+div2+"<br/>"+div3+"<br/>"+div4);
+
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

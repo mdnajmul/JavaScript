@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this keywordr</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: this keyword")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+
+                function myFunction(){
+                    var a = 200;
+                    this.x = 300;
+                    this.y = 400;
+                    this.z = function(){
+                        return this.x + this.y;
+                    }
+                }
+                //create a object of myFunction() 
+                var mfunc = new myFunction();
+                
+                document.write(mfunc.a+"<br/>"); //result is undefined because a is local variable
+                document.write(mfunc.x+"<br/>");
+                document.write(mfunc.y+"<br/>");
+                document.write(mfunc.z());
+
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

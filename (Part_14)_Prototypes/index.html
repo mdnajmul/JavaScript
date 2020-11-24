@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototypes</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Prototypes")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                /*
+                  Every JavaScript object has a prototype. The prototype is also an object.
+                  All JavaScript objects inherit their properties and methods from their prototype.
+                  All JavaScript objects (Date, Array, RegExp, Function,....) inherit from the object.prototype .
+                */
+                
+                function totalNum(a, b){
+                    this.x = a;
+                    this.y = b;
+                    this.sum = function(){
+                        return this.x + this.y;
+                    }
+                }
+                var tn = new totalNum(10,15);
+                document.write(tn.sum()+"<br/>");
+                
+                //Here, result is [object Object] . Because 'toString()' function is not present inside 'totalNum()' method
+                //So, Next check it inside object prototypes chain & this method is present inside object prototypes 
+                document.write(tn.toString());
+
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

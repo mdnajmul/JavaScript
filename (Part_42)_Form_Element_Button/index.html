@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Element Button</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Form Element Button")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">
+            <form action="" method="" name="myform">
+                 <table>
+                     <tr>
+                         <td><input type="text" name="myname"></td>
+                         <td><input type="button" value="Click" name="click" onclick="textResult(this.form)"></td>
+                     </tr>
+                 </table>
+            </form>
+            <script>
+                
+                function textResult(form){
+                    var text = form.myname.value;
+                    if(text == ''){
+                        alert("Please write something!");
+                    } else{
+                        alert("You write: "+text);
+                    }
+                }
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

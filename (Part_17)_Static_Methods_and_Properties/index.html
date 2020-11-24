@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Methods and Properties</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Static Methods and Properties")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                
+                function totalNum(){
+                    this.x = 20;
+                    this.y = function(){
+                        return this.x + this.x;
+                    }
+                }
+                //assing value inside a by using prototype (static property)
+                totalNum.prototype.a = 200;
+                //static function
+                totalNum.c = function(){
+                    
+                }
+                
+                
+                //this is similar to private property.This is access only from inside totalNum() function 
+                totalNum.b = 800;
+                //access this property we write:
+                document.write(totalNum.b+"<br/>");
+               
+                
+                //create a object of totalNum() function
+                var tn = new totalNum();
+                
+                //now we can call public property & method by using tn object
+                document.write(tn.a);
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

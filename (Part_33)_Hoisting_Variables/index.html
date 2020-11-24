@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoisting Variables</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Hoisting Variables")</script></h2>
+        </header>
+        
+        <div id="show"></div>
+        <div id="show2"></div>
+        <section class="maincontent">
+               
+            
+            <script>
+                
+                /*
+                    Hoisting is JavaScript's default behavior of moving declarations to the top
+                    
+                    Only declarations go to top. Assigning value not go to top 
+                    
+                    var x = 5; //Here, var x; go to top
+                */
+                
+                //JavaScript only hoists declarations, not initializations.
+                //Example 1 does not give the same result as Example 2:
+                
+                //Example 1
+                var x = 5; // Initialize x
+                var y = 7; // Initialize y
+
+                result = document.getElementById("show"); // Find an element
+                result.innerHTML = x + " " + y;           // Display x and y
+                
+                
+                //Example 2
+                var a = 5; // Initialize x
+
+                res = document.getElementById("show2"); // Find an element
+                res.innerHTML = a + " " + b;           // Display a and b
+
+                var b = 7; // Initialize b   Here, (var b;) go to top
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

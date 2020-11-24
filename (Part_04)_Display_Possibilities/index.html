@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Display Possibilities</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2><script>document.write("JavaScript: Display Possibilities")</script></h2>
+        </div>
+        
+        <div class="maincontent">
+            <div id="show"></div>
+            <script>
+                //declare some global variables
+                var firstName = "Md. Najmul ";
+                var lasttName = "Ovi";
+                var fullName = firstName+lasttName;
+                
+                //Use 'innerHTML' to show values //
+                document.getElementById("show").innerHTML = fullName;
+                
+                
+                // Use 'document.write()' to show values //
+                document.write("<br/>");
+                
+                document.write(fullName);
+                
+                document.write("<br/>");
+                
+                // Use 'window.alert()' to show values //
+                window.alert(fullName);
+                alert(firstName);
+                
+                //// Use 'console.log()' to show values inside consle//
+                console.log(fullName);
+                
+                
+            </script>
+        </div>
+        
+        <div class="footer">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </div>
+    </section>
+</body>
+</html>

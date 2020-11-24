@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript More Use On Console</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2><script>document.write("JavaScript: More Use On Console")</script></h2>
+        </div>
+        
+        <div class="maincontent">
+            <div id="show"></div>
+            <script>
+                //declare some global variables
+                var firstName = "Md. Najmul ";
+                var lasttName = "Ovi";
+                var fullName = firstName+lasttName;
+                
+                //use console.log to show values
+                console.log(fullName);
+               
+                //use console.info for give any information
+                console.info("Give me your information!");
+                
+                //show warning message
+                console.warn("This is your last change!");
+                
+                //show error message
+                console.error("This is undefined!");
+                
+                //check execution time
+                console.time("Check Time");
+                    var sum = 5+3;
+                    console.log(sum);
+                console.timeEnd("Check Time");
+                
+                //copy some text use this function inside console
+               // copy("This line is copyied");
+                
+                
+                
+            </script>
+        </div>
+        
+        <div class="footer">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </div>
+    </section>
+</body>
+</html>

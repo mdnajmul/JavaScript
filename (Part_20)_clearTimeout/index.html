@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clearTimeout()</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: clearTimeout()")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <p>Click the first button to alert "Najmul Ovi" after waiting 5 seconds.</p>
+            <p>Click the second button to prevent the first function to execute. (we must click it before the 5 seconds are up.)</p>
+
+            <button onclick="myFunction()">Try it</button>
+            <button onclick="myStopFunction()">Stop the alert</button>
+            <script>
+                /* 
+                    The clearTimeout() method clears a timer set with the setTimeout() method.
+                    he ID value returned by setTimeout() is used as the parameter for the clearTimeout() method.
+                    Then, if the function has not already been executed, you will be able to stop the execution by calling the clearTimeout() method.
+                    Syntax: clearTimeout(id_of_settimeout) //Here, id_of_settimeout is the ID value of the timer returned by the setTimeout() method
+                */
+                var myVar;
+                //Display an alert box after 5 seconds (5000 milliseconds):
+                function myFunction() {
+                  myVar = setTimeout(function(){ alert("Najmul Ovi"); }, 5000);
+                }
+                //stop the alert
+                function myStopFunction() {
+                  clearTimeout(myVar);
+                }
+
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

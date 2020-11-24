@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private & Public</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Private & Public")</script></h2>
+        </header>
+        
+        <section class="maincontent">
+            
+            <script>
+                
+                function totalNum(a){
+                    //private
+                    x = 25;
+                    sum = function(){
+                        return x+a;
+                    };
+                    
+                    //public
+                    this.result = function(){
+                        this.total = sum();
+                        return "Result is: "+this.total;
+                    }
+                }
+                
+                //create a object of totalNum() function
+                var tn = new totalNum(10);
+                
+                //now we can call public property & method by using tn object
+                document.write(tn.result());
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

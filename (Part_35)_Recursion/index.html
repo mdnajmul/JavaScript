@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion</title>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <section class="content">
+       
+        <header class="top">
+            <h2><script>document.write("JavaScript: Recursion")</script></h2>
+        </header>
+        
+        
+        <section class="maincontent">  
+            <script>
+                var num = prompt("Give a nuber:");
+                
+                //** Find factorial number without using Recursion **//         
+                function factorial(n){
+                    if(n == 0){
+                        return 1;
+                    } else{
+                        res = 1;
+                        for(i = 1; i<=n; i++){
+                            res *=i;
+                        }
+                        return res;
+                    }
+                }
+                document.write("Factorial result is: "+factorial(num)+"<br/>");
+                //**===================================================**//
+                
+                
+                //** Find factorial number using Recursion **//
+                function factorial(n){
+                    if(n == 0){
+                        return 1;
+                    } else{
+                        return n*factorial(n-1);
+                    }
+                }
+                document.write("Factorial result is: "+factorial(num));
+                //**===================================================**//
+                
+
+            </script>
+        </section>
+        
+        <footer class="foot">
+            <h2><script>document.write("Md. Najmul Ovi")</script></h2>
+        </footer>
+        
+    </section>
+</body>
+</html>

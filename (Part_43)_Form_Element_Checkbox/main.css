@@ -1,0 +1,9 @@
+*{margin: 0; padding: 0; outline: 0;}
+body{font-family: arial; font-size: 18px; color: #444; line-height: 25px;}
+.content{background: #f0f0f0; width: 800px; margin: 0 auto;}
+.maincontent{background: #fff; margin: 10px; min-height: 500px; padding: 5px 10px;}
+.top, .foot {text-align: center; background: #ddd; padding: 10px;}
+table{width: 270px; margin: 0 auto; padding: 10px; border: 1px solid #ddd;}
+input[type="button"],input[type="submit"],input[type="reset"]{width: 120px; padding: 5px; cursor: pointer; margin-top: 5px;}
+table{width: 500px; margin: 0 auto; padding: 10px; border: 1px solid #ddd;}
+input[type="text"]{width: 300px; padding: 5px 10px;}
